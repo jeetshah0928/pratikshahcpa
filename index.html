@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pratik Shah, CPA — Financial Strategy for Growing Businesses</title>
+<meta name="description" content="Accounting, tax, fractional CFO, payroll, and advisory services built for founders and owners who want to grow with clarity. Schedule a consultation with Pratik Shah, CPA.">
+
+<!-- SEO / Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AccountingService",
+  "name": "Pratik Shah, CPA",
+  "description": "Accounting, tax planning, fractional CFO, payroll, and advisory services for growing businesses, based in Murfreesboro and serving Middle Tennessee and the broader TN, KY, and AL region.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Murfreesboro",
+    "addressRegion": "TN",
+    "addressCountry": "US"
+  },
+  "areaServed": ["Murfreesboro, TN", "Middle Tennessee", "Tennessee", "Kentucky", "Alabama"],
+  "priceRange": "$$"
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          navy: { DEFAULT: '#0B1B3A', 900: '#070F26', 800: '#0B1B3A', 700: '#132752' },
+          ink: '#0F172A',
+          mist: '#F4F6F9',
+          fog: '#E7EBF2',
+          slate: '#5B6577',
+          accent: { DEFAULT: '#2E5EFF', 600: '#2650DE', 100: '#E9EEFF' },
+        },
+        fontFamily: {
+          sans: ['Inter', 'sans-serif'],
+          mono: ['IBM Plex Mono', 'monospace'],
+        },
+      }
+    }
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; color: #0F172A; background: #FFFFFF; }
+  .ledger {
+    background-image: repeating-linear-gradient(to bottom, transparent, transparent 39px, rgba(11,27,58,0.06) 40px);
+  }
+  .ledger-dark {
+    background-image: repeating-linear-gradient(to bottom, transparent, transparent 39px, rgba(255,255,255,0.055) 40px);
+  }
+  .reveal { opacity: 0; transform: translateY(16px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+  .num { font-family: 'IBM Plex Mono', monospace; }
+  .card-hover { transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease; }
+  .card-hover:hover { transform: translateY(-4px); box-shadow: 0 24px 48px -20px rgba(11,27,58,0.18); border-color: #2E5EFF33; }
+  .underline-grow { position: relative; }
+  .underline-grow::after {
+    content: ''; position: absolute; left: 0; bottom: -4px; height: 2px; width: 0;
+    background: #2E5EFF; transition: width .3s ease;
+  }
+  .underline-grow:hover::after { width: 100%; }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { transition: none; opacity: 1; transform: none; }
+    html { scroll-behavior: auto; }
+  }
+  .faq-content { max-height: 0; overflow: hidden; transition: max-height .35s ease; }
+  .faq-item.open .faq-content { max-height: 400px; }
+  .faq-item.open .faq-chevron { transform: rotate(45deg); }
+  .faq-chevron { transition: transform .25s ease; }
+  ::selection { background: #2E5EFF; color: white; }
+  :focus-visible { outline: 2px solid #2E5EFF; outline-offset: 3px; }
+  .industry-tab { color: inherit; cursor: pointer; }
+  .industry-tab .industry-arrow { color: #E7EBF2; transition: color .25s ease, transform .25s ease; }
+  .industry-tab:hover { background: #F4F6F9; }
+  .industry-tab.is-active { background: #0B1B3A; }
+  .industry-tab.is-active .num,
+  .industry-tab.is-active .font-semibold { color: #FFFFFF; }
+  .industry-tab.is-active .industry-arrow { color: #2E5EFF; transform: translateX(3px); }
+  #industryDisplay.fade { opacity: 0; }
+</style>
+</head>
+<body class="antialiased">
+
+<!-- NAV -->
+<header id="nav" class="fixed top-0 inset-x-0 z-50 transition-all duration-300 bg-white/80 backdrop-blur border-b border-transparent">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 h-20 flex items-center justify-between">
+    <a href="#" class="flex items-center gap-2.5">
+      <span class="h-8 w-8 rounded-md bg-navy flex items-center justify-center">
+        <span class="text-white text-sm font-bold num">PS</span>
+      </span>
+      <span class="font-semibold text-[15px] tracking-tight text-ink">Pratik Shah, <span class="text-slate font-medium">CPA</span></span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-9 text-[14.5px] font-medium text-slate">
+      <a href="./services.html" class="hover:text-ink underline-grow">Services</a>
+      <a href="#industries" class="hover:text-ink underline-grow">Industries</a>
+      <a href="./about.html" class="hover:text-ink underline-grow">About</a>
+      <a href="#faq" class="hover:text-ink underline-grow">Resources</a>
+      <a href="#contact" class="hover:text-ink underline-grow">Contact</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <a href="#contact" class="hidden sm:inline-flex items-center rounded-full bg-navy hover:bg-navy-700 text-white text-[14px] font-semibold px-5 py-2.5 transition-colors">
+        Schedule Consultation
+      </a>
+      <button id="menuBtn" class="lg:hidden p-2 -mr-2" aria-label="Open menu" aria-expanded="false">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0F172A" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+  <div id="mobileMenu" class="hidden lg:hidden bg-white border-t border-fog px-6 py-5 space-y-4 text-[15px] font-medium text-ink">
+    <a href="./services.html" class="block">Services</a>
+    <a href="#industries" class="block">Industries</a>
+    <a href="./about.html" class="block">About</a>
+    <a href="#faq" class="block">Resources</a>
+    <a href="#contact" class="block">Contact</a>
+    <a href="#contact" class="block rounded-full bg-navy text-white text-center font-semibold px-5 py-2.5">Schedule Consultation</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="relative pt-40 pb-24 lg:pt-52 lg:pb-32 overflow-hidden ledger">
+  <div class="absolute inset-0 bg-gradient-to-b from-mist/60 to-white -z-10"></div>
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 relative">
+    <div class="max-w-3xl">
+      <p class="num text-[13px] tracking-[0.14em] uppercase text-accent font-medium mb-6 reveal">Accounting · Tax · CFO · Payroll · Advisory</p>
+      <h1 class="text-[2.75rem] leading-[1.08] sm:text-6xl lg:text-[4.25rem] lg:leading-[1.04] font-semibold tracking-tight text-ink reveal">
+        The financial partner behind businesses built to last.
+      </h1>
+      <p class="mt-7 text-lg lg:text-xl text-slate leading-relaxed max-w-2xl reveal">
+        Pratik Shah, CPA pairs two decades of accounting expertise with modern technology and hands-on strategy —
+        proudly based in Murfreesboro, serving businesses across Middle Tennessee and the broader TN, KY, and AL region.
+      </p>
+      <div class="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-4 reveal">
+        <a href="#contact" class="inline-flex items-center gap-2 rounded-full bg-navy text-white font-semibold text-[15px] px-7 py-3.5 hover:bg-navy-700 transition-colors">
+          Schedule a Consultation
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#services" class="inline-flex items-center gap-2 text-ink font-semibold text-[15px] px-2 py-3.5 underline-grow">
+          Explore our services
+        </a>
+      </div>
+      <div class="mt-16 flex flex-wrap gap-x-10 gap-y-4 text-sm text-slate reveal">
+        <div class="flex items-center gap-2"><span class="num font-semibold text-ink text-base">2</span> decades in practice</div>
+        <div class="flex items-center gap-2"><span class="num font-semibold text-ink text-base">500+</span> clients served</div>
+        <div class="flex items-center gap-2"><span class="num font-semibold text-ink text-base">CPA</span> &amp; MBA led</div>
+        <div class="flex items-center gap-2"><span class="num font-semibold text-ink text-base">TN · KY · AL</span> and growing</div>
+        <div class="flex items-center gap-2"><span class="num font-semibold text-ink text-base">100%</span> cloud-based</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="py-24 lg:py-32 bg-mist">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="max-w-2xl mb-16 reveal">
+      <p class="num text-[13px] tracking-[0.14em] uppercase text-accent font-medium mb-4">What we do</p>
+      <h2 class="text-3xl lg:text-4xl font-semibold tracking-tight text-ink">Every financial function your business needs. One firm.</h2>
+      <a href="./services.html" class="mt-4 inline-flex items-center gap-1.5 text-accent font-semibold text-sm underline-grow">View all services <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 reveal">
+
+      <div class="card-hover bg-white rounded-2xl border border-fog p-8 flex flex-col">
+        <h3 class="font-semibold text-xl text-ink">Accounting</h3>
+        <p class="mt-3 text-[15px] text-slate leading-relaxed flex-1">Gain financial clarity with bookkeeping and reporting systems that help you make smarter decisions — updated monthly, always audit-ready.</p>
+        <a href="./services.html#accounting" class="mt-6 inline-flex items-center gap-1.5 text-accent font-semibold text-sm underline-grow">Learn more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+
+      <div class="card-hover bg-white rounded-2xl border border-fog p-8 flex flex-col">
+        <h3 class="font-semibold text-xl text-ink">Tax Planning &amp; Preparation</h3>
+        <p class="mt-3 text-[15px] text-slate leading-relaxed flex-1">Proactive tax strategy designed to minimize surprises and maximize opportunities — for your business and for you personally.</p>
+        <a href="./services.html#tax" class="mt-6 inline-flex items-center gap-1.5 text-accent font-semibold text-sm underline-grow">Learn more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+
+      <div class="card-hover bg-white rounded-2xl border border-fog p-8 flex flex-col">
+        <h3 class="font-semibold text-xl text-ink">Fractional CFO</h3>
+        <p class="mt-3 text-[15px] text-slate leading-relaxed flex-1">Executive-level financial leadership — forecasting, fundraising support, and margin strategy — without a full-time hire.</p>
+        <a href="./services.html#cfo" class="mt-6 inline-flex items-center gap-1.5 text-accent font-semibold text-sm underline-grow">Learn more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+
+      <div class="card-hover bg-white rounded-2xl border border-fog p-8 flex flex-col">
+        <h3 class="font-semibold text-xl text-ink">Payroll</h3>
+        <p class="mt-3 text-[15px] text-slate leading-relaxed flex-1">Accurate, on-time payroll and compliance — so your team gets paid right, and you never worry about filings.</p>
+        <a href="./services.html#payroll" class="mt-6 inline-flex items-center gap-1.5 text-accent font-semibold text-sm underline-grow">Learn more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+
+      <div class="card-hover bg-white rounded-2xl border border-fog p-8 flex flex-col">
+        <h3 class="font-semibold text-xl text-ink">Advisory</h3>
+        <p class="mt-3 text-[15px] text-slate leading-relaxed flex-1">Ongoing counsel on entity structure, growth decisions, and profitability — a sounding board that knows your numbers.</p>
+        <a href="./services.html#advisory" class="mt-6 inline-flex items-center gap-1.5 text-accent font-semibold text-sm underline-grow">Learn more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+
+      <div class="rounded-2xl bg-navy p-8 flex flex-col justify-between text-white">
+        <div>
+          <h3 class="font-semibold text-xl">Not sure where to start?</h3>
+          <p class="mt-3 text-[15px] text-white/70 leading-relaxed">Tell us where your business is today. We'll recommend the right mix of services.</p>
+        </div>
+        <a href="#contact" class="mt-6 inline-flex w-fit items-center gap-1.5 bg-white text-navy font-semibold text-sm rounded-full px-5 py-2.5">Talk to us</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section id="industries" class="py-24 lg:py-32">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="max-w-2xl mb-16 reveal">
+      <p class="num text-[13px] tracking-[0.14em] uppercase text-accent font-medium mb-4">Industries</p>
+      <h2 class="text-3xl lg:text-4xl font-semibold tracking-tight text-ink">Built around how your industry actually runs.</h2>
+      <p class="mt-4 text-[15px] text-slate leading-relaxed">Five core industries where we go deep — across Middle Tennessee and the wider TN, KY, and AL region.</p>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-0 border border-fog rounded-2xl overflow-hidden reveal" id="industrySplit">
+      <!-- LEFT: interactive nav list -->
+      <div class="flex flex-col bg-white" id="industryNav">
+        <button type="button" class="industry-tab is-active text-left px-7 lg:px-9 py-6 border-b border-fog flex items-center justify-between gap-4 transition-colors" data-industry="hospitality">
+          <span>
+            <span class="num text-xs text-accent block mb-1">01</span>
+            <span class="font-semibold text-lg text-ink">Hospitality</span>
+          </span>
+          <svg class="industry-arrow shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+        <button type="button" class="industry-tab text-left px-7 lg:px-9 py-6 border-b border-fog flex items-center justify-between gap-4 transition-colors" data-industry="retail">
+          <span>
+            <span class="num text-xs text-accent block mb-1">02</span>
+            <span class="font-semibold text-lg text-ink">Retail</span>
+          </span>
+          <svg class="industry-arrow shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+        <button type="button" class="industry-tab text-left px-7 lg:px-9 py-6 border-b border-fog flex items-center justify-between gap-4 transition-colors" data-industry="restaurants">
+          <span>
+            <span class="num text-xs text-accent block mb-1">03</span>
+            <span class="font-semibold text-lg text-ink">Restaurants</span>
+          </span>
+          <svg class="industry-arrow shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+        <button type="button" class="industry-tab text-left px-7 lg:px-9 py-6 border-b border-fog lg:border-b-0 flex items-center justify-between gap-4 transition-colors" data-industry="professional">
+          <span>
+            <span class="num text-xs text-accent block mb-1">04</span>
+            <span class="font-semibold text-lg text-ink">Professional Services</span>
+          </span>
+          <svg class="industry-arrow shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+        <button type="button" class="industry-tab text-left px-7 lg:px-9 py-6 flex items-center justify-between gap-4 transition-colors" data-industry="cstore">
+          <span>
+            <span class="num text-xs text-accent block mb-1">05</span>
+            <span class="font-semibold text-lg text-ink">Convenience Store &amp; Petroleum Retail</span>
+          </span>
+          <svg class="industry-arrow shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+      </div>
+
+      <!-- RIGHT: dynamic display -->
+      <div class="bg-mist border-t lg:border-t-0 lg:border-l border-fog p-8 lg:p-12 flex flex-col transition-opacity duration-200" id="industryDisplay">
+        <div class="aspect-[16/10] rounded-xl bg-white border border-fog flex items-center justify-center mb-8">
+          <span class="text-slate text-sm" id="industryImagePlaceholder">[ Image: Hospitality ]</span>
+        </div>
+        <p class="num text-xs uppercase tracking-[0.14em] text-accent font-medium mb-3" id="industryEyebrow">Industry · 01</p>
+        <h3 class="text-2xl font-semibold tracking-tight text-ink mb-3" id="industryTitle">Hospitality</h3>
+        <p class="text-[15px] text-slate leading-relaxed" id="industryDescription">
+          From boutique properties to multi-location groups, we help hospitality operators manage seasonal cash flow,
+          multi-property reporting, and labor costs — so occupancy swings never become a surprise.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="py-24 lg:py-32 bg-navy text-white ledger-dark">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="max-w-2xl mb-16 reveal">
+      <p class="num text-[13px] tracking-[0.14em] uppercase text-accent-100/80 font-medium mb-4" style="color:#8FB0FF">How we work</p>
+      <h2 class="text-3xl lg:text-4xl font-semibold tracking-tight">A clear path, from first call to long-term partner.</h2>
+    </div>
+    <div class="grid md:grid-cols-4 gap-8 reveal">
+      <div class="border-t border-white/15 pt-6">
+        <span class="num text-sm text-white/50">01</span>
+        <h3 class="mt-3 font-semibold text-lg">Discovery</h3>
+        <p class="mt-2 text-[15px] text-white/65 leading-relaxed">We learn your business, your goals, and where the numbers currently stand.</p>
+      </div>
+      <div class="border-t border-white/15 pt-6">
+        <span class="num text-sm text-white/50">02</span>
+        <h3 class="mt-3 font-semibold text-lg">Planning</h3>
+        <p class="mt-2 text-[15px] text-white/65 leading-relaxed">We build a plan across accounting, tax, and strategy — tailored, not templated.</p>
+      </div>
+      <div class="border-t border-white/15 pt-6">
+        <span class="num text-sm text-white/50">03</span>
+        <h3 class="mt-3 font-semibold text-lg">Implementation</h3>
+        <p class="mt-2 text-[15px] text-white/65 leading-relaxed">We set up systems, close the gaps, and get everything running cleanly.</p>
+      </div>
+      <div class="border-t border-white/15 pt-6">
+        <span class="num text-sm text-white/50">04</span>
+        <h3 class="mt-3 font-semibold text-lg">Ongoing Partnership</h3>
+        <p class="mt-2 text-[15px] text-white/65 leading-relaxed">Monthly reporting, proactive check-ins, and a call away whenever you need us.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="py-24 lg:py-32 bg-mist">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="max-w-2xl mb-16 reveal">
+      <p class="num text-[13px] tracking-[0.14em] uppercase text-accent font-medium mb-4">Client results</p>
+      <h2 class="text-3xl lg:text-4xl font-semibold tracking-tight text-ink">Trusted by owners who need more than a tax preparer.</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6 reveal">
+      <div class="bg-white rounded-2xl border border-fog p-8">
+        <p class="text-[15px] text-ink leading-relaxed">"[Placeholder testimonial — replace with a real client quote about clarity, responsiveness, or growth impact.]"</p>
+        <p class="mt-6 text-sm font-semibold text-ink">Client Name</p>
+        <p class="text-sm text-slate">Title, Company</p>
+      </div>
+      <div class="bg-white rounded-2xl border border-fog p-8">
+        <p class="text-[15px] text-ink leading-relaxed">"[Placeholder testimonial — replace with a real client quote about clarity, responsiveness, or growth impact.]"</p>
+        <p class="mt-6 text-sm font-semibold text-ink">Client Name</p>
+        <p class="text-sm text-slate">Title, Company</p>
+      </div>
+      <div class="bg-white rounded-2xl border border-fog p-8">
+        <p class="text-[15px] text-ink leading-relaxed">"[Placeholder testimonial — replace with a real client quote about clarity, responsiveness, or growth impact.]"</p>
+        <p class="mt-6 text-sm font-semibold text-ink">Client Name</p>
+        <p class="text-sm text-slate">Title, Company</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="py-24 lg:py-32">
+  <div class="max-w-4xl mx-auto px-6 lg:px-8">
+    <div class="max-w-2xl mb-14 reveal">
+      <p class="num text-[13px] tracking-[0.14em] uppercase text-accent font-medium mb-4">Questions</p>
+      <h2 class="text-3xl lg:text-4xl font-semibold tracking-tight text-ink">Frequently asked questions</h2>
+    </div>
+    <div class="space-y-3 reveal" id="faqList">
+      <div class="faq-item border border-fog rounded-xl px-6">
+        <button class="faq-trigger w-full flex items-center justify-between py-5 text-left font-semibold text-ink">
+          <span>What size businesses do you work with?</span>
+          <span class="faq-chevron text-accent text-xl leading-none">+</span>
+        </button>
+        <div class="faq-content"><p class="pb-5 text-[15px] text-slate leading-relaxed">We primarily work with small and growing businesses — from single-owner practices to multi-location companies with dozens of employees — across a wide range of industries.</p></div>
+      </div>
+      <div class="faq-item border border-fog rounded-xl px-6">
+        <button class="faq-trigger w-full flex items-center justify-between py-5 text-left font-semibold text-ink">
+          <span>Do you only do taxes, or ongoing accounting too?</span>
+          <span class="faq-chevron text-accent text-xl leading-none">+</span>
+        </button>
+        <div class="faq-content"><p class="pb-5 text-[15px] text-slate leading-relaxed">Both. Most clients work with us year-round for bookkeeping, reporting, and advisory — with tax planning and preparation built in, rather than treated as a once-a-year event.</p></div>
+      </div>
+      <div class="faq-item border border-fog rounded-xl px-6">
+        <button class="faq-trigger w-full flex items-center justify-between py-5 text-left font-semibold text-ink">
+          <span>What is a fractional CFO, and do I need one?</span>
+          <span class="faq-chevron text-accent text-xl leading-none">+</span>
+        </button>
+        <div class="faq-content"><p class="pb-5 text-[15px] text-slate leading-relaxed">A fractional CFO gives you access to senior financial leadership — forecasting, fundraising support, margin analysis — on a part-time basis. It's a fit if you're scaling and need strategic financial guidance without the cost of a full-time hire.</p></div>
+      </div>
+      <div class="faq-item border border-fog rounded-xl px-6">
+        <button class="faq-trigger w-full flex items-center justify-between py-5 text-left font-semibold text-ink">
+          <span>How do you handle communication and turnaround?</span>
+          <span class="faq-chevron text-accent text-xl leading-none">+</span>
+        </button>
+        <div class="faq-content"><p class="pb-5 text-[15px] text-slate leading-relaxed">You'll have direct access to Pratik and a small senior team, not a rotating help desk. Most questions are answered within one business day, and reporting is delivered on a set monthly schedule.</p></div>
+      </div>
+      <div class="faq-item border border-fog rounded-xl px-6">
+        <button class="faq-trigger w-full flex items-center justify-between py-5 text-left font-semibold text-ink">
+          <span>What does it cost to work with your firm?</span>
+          <span class="faq-chevron text-accent text-xl leading-none">+</span>
+        </button>
+        <div class="faq-content"><p class="pb-5 text-[15px] text-slate leading-relaxed">Pricing depends on the scope and complexity of your business. After an initial consultation, we'll recommend a service package with clear, predictable pricing — no surprise invoices.</p></div>
+      </div>
+      <div class="faq-item border border-fog rounded-xl px-6">
+        <button class="faq-trigger w-full flex items-center justify-between py-5 text-left font-semibold text-ink">
+          <span>What areas do you serve?</span>
+          <span class="faq-chevron text-accent text-xl leading-none">+</span>
+        </button>
+        <div class="faq-content"><p class="pb-5 text-[15px] text-slate leading-relaxed">We're based in Murfreesboro and primarily serve clients across Middle Tennessee, with a broader footprint spanning Tennessee, Kentucky, and Alabama. Our systems are built cloud-first, so we're always ready to support clients as their operations grow into new states.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section id="contact" class="py-24 lg:py-32 bg-navy text-white ledger-dark">
+  <div class="max-w-6xl mx-auto px-6 lg:px-8 reveal">
+    <div class="grid lg:grid-cols-2 rounded-3xl overflow-hidden border border-white/10">
+
+      <!-- Left: CTA -->
+      <div class="p-10 lg:p-14">
+        <p class="inline-flex items-center gap-2 num text-[13px] tracking-[0.14em] uppercase bg-white/10 border border-white/20 rounded-full px-4 py-1.5 mb-7" style="color:#8FB0FF">Free Consultation</p>
+        <h2 class="text-3xl lg:text-[2.75rem] leading-[1.1] font-semibold tracking-tight">Ready to make smarter financial decisions?</h2>
+        <p class="mt-5 text-lg text-white/70 leading-relaxed">Schedule a free consultation and discover how Pratik Shah, CPA can help you reach your financial goals.</p>
+
+        <ul class="mt-8 space-y-3">
+          <li class="flex items-center gap-3 text-white/85 text-[15px]">
+            <span class="h-5 w-5 rounded-full bg-accent flex items-center justify-center shrink-0"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            No-obligation initial consultation
+          </li>
+          <li class="flex items-center gap-3 text-white/85 text-[15px]">
+            <span class="h-5 w-5 rounded-full bg-accent flex items-center justify-center shrink-0"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            Personalized financial assessment
+          </li>
+          <li class="flex items-center gap-3 text-white/85 text-[15px]">
+            <span class="h-5 w-5 rounded-full bg-accent flex items-center justify-center shrink-0"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            Strategic recommendations for growth
+          </li>
+          <li class="flex items-center gap-3 text-white/85 text-[15px]">
+            <span class="h-5 w-5 rounded-full bg-accent flex items-center justify-center shrink-0"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            Clear pricing and transparent process
+          </li>
+        </ul>
+
+        <div class="mt-9 flex flex-col sm:flex-row gap-4">
+          <a href="tel:6159138559" class="inline-flex items-center justify-center gap-2 rounded-full bg-white text-navy font-semibold text-[15px] px-7 py-3.5 hover:bg-mist transition-colors">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Call Now
+          </a>
+          <a href="mailto:contact@cpa-shah.com" class="inline-flex items-center justify-center gap-2 rounded-full bg-white/10 border border-white/20 text-white font-semibold text-[15px] px-7 py-3.5 hover:bg-white/20 transition-colors">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 4h16v16H4z" opacity="0"/><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
+            Email Us
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: Contact info -->
+      <div class="bg-white/5 border-t lg:border-t-0 lg:border-l border-white/10 p-10 lg:p-14">
+        <h3 class="font-semibold text-xl mb-8">Get in touch</h3>
+        <div class="space-y-6">
+          <div class="flex items-start gap-4">
+            <span class="h-11 w-11 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </span>
+            <div><p class="text-sm text-white/50 mb-1">Phone</p><a href="tel:6159138559" class="font-semibold text-[17px] hover:text-white/80">(615) 913-8559</a></div>
+          </div>
+          <div class="flex items-start gap-4">
+            <span class="h-11 w-11 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
+            </span>
+            <div><p class="text-sm text-white/50 mb-1">Email</p><a href="mailto:contact@cpa-shah.com" class="font-semibold text-[17px] hover:text-white/80 break-all">contact@cpa-shah.com</a></div>
+          </div>
+          <div class="flex items-start gap-4">
+            <span class="h-11 w-11 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </span>
+            <div><p class="text-sm text-white/50 mb-1">Location</p><p class="font-semibold text-[17px]">Murfreesboro, TN</p></div>
+          </div>
+        </div>
+        <div class="mt-9 pt-8 border-t border-white/10">
+          <p class="text-sm text-white/50 mb-3">Business hours</p>
+          <div class="space-y-1.5 text-[15px]">
+            <div class="flex justify-between"><span class="text-white/70">Monday – Friday</span><span class="num font-medium">9:00 AM – 6:00 PM</span></div>
+            <div class="flex justify-between"><span class="text-white/70">Saturday</span><span class="num font-medium">By appointment</span></div>
+            <div class="flex justify-between"><span class="text-white/70">Sunday</span><span class="num font-medium">Closed</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="py-14 border-t border-fog">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+    <div class="flex items-center gap-2.5">
+      <span class="h-8 w-8 rounded-md bg-navy flex items-center justify-center"><span class="text-white text-sm font-bold num">PS</span></span>
+      <span class="font-semibold text-[15px] text-ink">Pratik Shah, CPA</span>
+    </div>
+    <div class="flex flex-wrap gap-x-8 gap-y-3 text-sm text-slate">
+      <a href="./services.html" class="hover:text-ink">Services</a>
+      <a href="#industries" class="hover:text-ink">Industries</a>
+      <a href="./about.html" class="hover:text-ink">About</a>
+      <a href="#faq" class="hover:text-ink">FAQ</a>
+      <a href="tel:6159138559" class="hover:text-ink">(615) 913-8559</a>
+      <a href="mailto:contact@cpa-shah.com" class="hover:text-ink">contact@cpa-shah.com</a>
+    </div>
+    <p class="text-sm text-slate">© 2026 Pratik Shah, CPA. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // nav background on scroll
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 20) { nav.classList.add('shadow-sm','border-fog'); }
+    else { nav.classList.remove('shadow-sm','border-fog'); }
+  });
+
+  // mobile menu
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuBtn.addEventListener('click', () => {
+    const open = mobileMenu.classList.toggle('hidden') === false;
+    menuBtn.setAttribute('aria-expanded', open);
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+  // scroll reveal
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // industries interactive split layout
+  const industryData = {
+    hospitality: {
+      index: '01',
+      title: 'Hospitality',
+      image: '[ Image: Hospitality ]',
+      description: "From boutique properties to multi-location groups, we help hospitality operators manage seasonal cash flow, multi-property reporting, and labor costs — so occupancy swings never become a surprise."
+    },
+    retail: {
+      index: '02',
+      title: 'Retail',
+      image: '[ Image: Retail ]',
+      description: "Inventory accounting, cost of goods sold, and multi-location reconciliation — built for retailers who need to know their margins on every SKU, not just at year-end."
+    },
+    restaurants: {
+      index: '03',
+      title: 'Restaurants',
+      image: '[ Image: Restaurants ]',
+      description: "Tip reporting, food and labor cost tracking, and high-volume daily reconciliation — so you can manage margins meal by meal, not just month by month."
+    },
+    professional: {
+      index: '04',
+      title: 'Professional Services',
+      image: '[ Image: Professional Services ]',
+      description: "Entity structure, owner compensation, and utilization-based revenue — advisory built for firms whose biggest asset walks out the door every night."
+    },
+    cstore: {
+      index: '05',
+      title: 'Convenience Store & Petroleum Retail',
+      image: '[ Image: Convenience Store & Petroleum Retail ]',
+      description: "Fuel margin tracking, multi-site consolidation, and motor fuel tax compliance — for operators managing thin margins across multiple locations."
+    }
+  };
+
+  const industryTabs = document.querySelectorAll('.industry-tab');
+  const industryDisplay = document.getElementById('industryDisplay');
+  const industryImagePlaceholder = document.getElementById('industryImagePlaceholder');
+  const industryEyebrow = document.getElementById('industryEyebrow');
+  const industryTitle = document.getElementById('industryTitle');
+  const industryDescription = document.getElementById('industryDescription');
+
+  function setIndustry(key) {
+    const data = industryData[key];
+    if (!data) return;
+    industryDisplay.classList.add('fade');
+    setTimeout(() => {
+      industryImagePlaceholder.textContent = data.image;
+      industryEyebrow.textContent = `Industry · ${data.index}`;
+      industryTitle.textContent = data.title;
+      industryDescription.textContent = data.description;
+      industryDisplay.classList.remove('fade');
+    }, 150);
+    industryTabs.forEach(tab => tab.classList.toggle('is-active', tab.dataset.industry === key));
+  }
+
+  industryTabs.forEach(tab => {
+    tab.addEventListener('click', () => setIndustry(tab.dataset.industry));
+  });
+
+  // faq accordion
+  document.querySelectorAll('.faq-trigger').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+</script>
+</body>
+</html>
