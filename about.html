@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Pratik Shah, CPA</title>
+<meta name="description" content="Two decades of accounting expertise, led by Pratik Shah, CPA. Meet the firm and the team behind it, based in Murfreesboro and serving Middle Tennessee, Kentucky, and Alabama.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: { extend: {
+      colors: {
+        navy: { DEFAULT: '#0B1B3A', 900: '#070F26', 800: '#0B1B3A', 700: '#132752' },
+        ink: '#0F172A', mist: '#F4F6F9', fog: '#E7EBF2', slate: '#5B6577',
+        accent: { DEFAULT: '#2E5EFF', 600: '#2650DE', 100: '#E9EEFF' },
+      },
+      fontFamily: { sans: ['Inter','sans-serif'], mono: ['IBM Plex Mono','monospace'] },
+    }}
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; color:#0F172A; background:#FFFFFF; }
+  .num { font-family:'IBM Plex Mono', monospace; }
+  .ledger { background-image: repeating-linear-gradient(to bottom, transparent, transparent 39px, rgba(11,27,58,0.06) 40px); }
+  .ledger-dark { background-image: repeating-linear-gradient(to bottom, transparent, transparent 39px, rgba(255,255,255,0.055) 40px); }
+  .card-hover { transition: transform .3s ease, box-shadow .3s ease; }
+  .card-hover:hover { transform: translateY(-4px); box-shadow: 0 24px 48px -20px rgba(11,27,58,0.18); }
+  .underline-grow { position: relative; }
+  .underline-grow::after { content:''; position:absolute; left:0; bottom:-4px; height:2px; width:0; background:#2E5EFF; transition:width .3s ease; }
+  .underline-grow:hover::after { width:100%; }
+  .reveal { opacity: 0; transform: translateY(16px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+  @media (prefers-reduced-motion: reduce) { .reveal { transition:none; opacity:1; transform:none; } html { scroll-behavior:auto; } }
+  :focus-visible { outline: 2px solid #2E5EFF; outline-offset: 3px; }
+</style>
+</head>
+<body class="antialiased">
+
+<!-- NAV -->
+<header id="nav" class="fixed top-0 inset-x-0 z-50 bg-white/90 backdrop-blur border-b border-fog">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 h-20 flex items-center justify-between">
+    <a href="./index.html" class="flex items-center gap-2.5">
+      <span class="h-8 w-8 rounded-md bg-navy flex items-center justify-center"><span class="text-white text-sm font-bold num">PS</span></span>
+      <span class="font-semibold text-[15px] text-ink">Pratik Shah, <span class="text-slate font-medium">CPA</span></span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-9 text-[14.5px] font-medium text-slate">
+      <a href="./services.html" class="hover:text-ink underline-grow">Services</a>
+      <a href="./index.html#industries" class="hover:text-ink underline-grow">Industries</a>
+      <a href="./about.html" class="text-ink underline-grow">About</a>
+      <a href="./index.html#faq" class="hover:text-ink underline-grow">Resources</a>
+      <a href="./index.html#contact" class="hover:text-ink underline-grow">Contact</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <a href="./index.html#contact" class="hidden sm:inline-flex items-center rounded-full bg-navy hover:bg-navy-700 text-white text-[14px] font-semibold px-5 py-2.5 transition-colors">Schedule Consultation</a>
+      <button id="menuBtn" class="lg:hidden p-2 -mr-2" aria-label="Open menu" aria-expanded="false">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0F172A" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+  <div id="mobileMenu" class="hidden lg:hidden bg-white border-t border-fog px-6 py-5 space-y-4 text-[15px] font-medium text-ink">
+    <a href="./services.html" class="block">Services</a>
+    <a href="./index.html#industries" class="block">Industries</a>
+    <a href="./about.html" class="block">About</a>
+    <a href="./index.html#faq" class="block">Resources</a>
+    <a href="./index.html#contact" class="block">Contact</a>
+    <a href="./index.html#contact" class="block rounded-full bg-navy text-white text-center font-semibold px-5 py-2.5">Schedule Consultation</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="pt-40 pb-20 lg:pt-52 lg:pb-24 ledger">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <p class="num text-[13px] tracking-[0.14em] uppercase text-accent font-medium mb-6">About the firm</p>
+    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight max-w-3xl leading-[1.08]">Experience meets excellence.</h1>
+    <p class="mt-6 text-lg lg:text-xl text-slate max-w-2xl leading-relaxed">Two decades of accounting and advisory expertise, built on accuracy, transparency, and strategic insight — proudly based in Murfreesboro and serving Middle Tennessee, Kentucky, and Alabama.</p>
+  </div>
+</section>
+
+<!-- PILLARS -->
+<section class="py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="max-w-2xl mb-16 reveal">
+      <p class="num text-[13px] tracking-[0.14em] uppercase text-accent font-medium mb-4">Why owners choose us</p>
+      <h2 class="text-3xl lg:text-4xl font-semibold tracking-tight text-ink">More than a bookkeeper. A partner who thinks like an owner.</h2>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-fog rounded-2xl overflow-hidden reveal">
+      <div class="bg-white p-8 lg:p-9">
+        <span class="num text-xs text-accent">01</span>
+        <h3 class="mt-4 font-semibold text-lg text-ink">A real relationship</h3>
+        <p class="mt-3 text-[15px] text-slate leading-relaxed">Direct access to your CPA — not a rotating team of unfamiliar associates.</p>
+      </div>
+      <div class="bg-white p-8 lg:p-9">
+        <span class="num text-xs text-accent">02</span>
+        <h3 class="mt-4 font-semibold text-lg text-ink">Strategy first</h3>
+        <p class="mt-3 text-[15px] text-slate leading-relaxed">We look ahead of the numbers, not just behind them — planning for what's next.</p>
+      </div>
+      <div class="bg-white p-8 lg:p-9">
+        <span class="num text-xs text-accent">03</span>
+        <h3 class="mt-4 font-semibold text-lg text-ink">Modern technology</h3>
+        <p class="mt-3 text-[15px] text-slate leading-relaxed">Cloud accounting, real-time dashboards, and automated workflows — no filing cabinets.</p>
+      </div>
+      <div class="bg-white p-8 lg:p-9">
+        <span class="num text-xs text-accent">04</span>
+        <h3 class="mt-4 font-semibold text-lg text-ink">Accuracy</h3>
+        <p class="mt-3 text-[15px] text-slate leading-relaxed">Every number matters. Precise reporting and meticulous record-keeping you can trust for critical decisions.</p>
+      </div>
+      <div class="bg-white p-8 lg:p-9">
+        <span class="num text-xs text-accent">05</span>
+        <h3 class="mt-4 font-semibold text-lg text-ink">Transparency</h3>
+        <p class="mt-3 text-[15px] text-slate leading-relaxed">No surprises, no hidden fees. You'll always know exactly where your business stands financially.</p>
+      </div>
+      <div class="bg-white p-8 lg:p-9">
+        <span class="num text-xs text-accent">06</span>
+        <h3 class="mt-4 font-semibold text-lg text-ink">Two decades, proven</h3>
+        <p class="mt-3 text-[15px] text-slate leading-relaxed">Deep experience across industries, translated into advice specific to your business.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT THE FIRM -->
+<section class="py-20 lg:py-28 bg-mist">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-16 items-center">
+    <div class="reveal order-2 lg:order-1">
+      <p class="num text-[13px] tracking-[0.14em] uppercase text-accent font-medium mb-4">About the firm</p>
+      <h2 class="text-3xl lg:text-4xl font-semibold tracking-tight text-ink">Led by a CPA who has sat where you sit.</h2>
+      <p class="mt-6 text-[17px] text-slate leading-relaxed">
+        Pratik Shah founded this firm on a simple belief: business owners deserve a financial partner who
+        understands strategy as well as compliance. With an MBA, a CPA license, and two decades advising
+        businesses across a range of industries, Pratik built a practice that combines rigorous
+        accounting with the judgment of an experienced advisor.
+      </p>
+      <p class="mt-4 text-[17px] text-slate leading-relaxed">
+        Proudly based in Murfreesboro, we serve clients throughout Middle Tennessee and, more broadly,
+        across Tennessee, Kentucky, and Alabama — with the systems in place to support clients as they
+        continue to expand into new markets.
+      </p>
+      <p class="mt-4 text-[17px] text-slate leading-relaxed">
+        Every client works directly with Pratik and a small, senior team — not a call center, and not a
+        rotating cast of junior staff.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-8">
+        <div><p class="num text-2xl font-semibold text-ink">2</p><p class="text-sm text-slate">Decades in practice</p></div>
+        <div><p class="num text-2xl font-semibold text-ink">CPA</p><p class="text-sm text-slate">Licensed &amp; MBA</p></div>
+        <div><p class="num text-2xl font-semibold text-ink">TN·KY·AL</p><p class="text-sm text-slate">Regional footprint</p></div>
+        <div><p class="num text-2xl font-semibold text-ink">1:1</p><p class="text-sm text-slate">Direct access, always</p></div>
+      </div>
+      <a href="mailto:contact@cpa-shah.com" class="mt-8 inline-flex items-center gap-2 text-accent font-semibold text-sm underline-grow">
+        Contact Pratik
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+    <div class="reveal order-1 lg:order-2">
+      <div class="aspect-[4/5] rounded-2xl bg-white border border-fog flex items-center justify-center overflow-hidden">
+        <img src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68feaf350dfe9f8e4212bd0c/9703f4d86_Pic-4-v1-1536x1536.png" alt="Pratik Shah, CPA" class="w-full h-full object-cover">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="max-w-2xl mb-16 reveal">
+      <p class="num text-[13px] tracking-[0.14em] uppercase text-accent font-medium mb-4">The team</p>
+      <h2 class="text-3xl lg:text-4xl font-semibold tracking-tight text-ink">Dedicated professionals behind every engagement.</h2>
+      <p class="mt-4 text-[15px] text-slate leading-relaxed">You work directly with Pratik — backed by a small, senior team handling the day-to-day.</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 reveal">
+      <div class="card-hover bg-white rounded-2xl border border-fog overflow-hidden">
+        <div class="h-32 bg-navy flex items-center justify-center">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" opacity="0.6"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
+        <div class="p-6">
+          <p class="text-sm font-semibold text-accent mb-1">Payroll Operations</p>
+          <h3 class="font-semibold text-lg text-ink">Payroll Manager</h3>
+          <p class="mt-2 text-sm text-slate leading-relaxed">Ensures accurate, on-time payroll processing across every client, with deep expertise in compliance and tax withholdings.</p>
+        </div>
+      </div>
+      <div class="card-hover bg-white rounded-2xl border border-fog overflow-hidden">
+        <div class="h-32 bg-navy flex items-center justify-center">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" opacity="0.6"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
+        <div class="p-6">
+          <p class="text-sm font-semibold text-accent mb-1">Payroll Support</p>
+          <h3 class="font-semibold text-lg text-ink">Payroll Admin</h3>
+          <p class="mt-2 text-sm text-slate leading-relaxed">Manages day-to-day payroll operations and employee records, keeping payment distribution seamless every cycle.</p>
+        </div>
+      </div>
+      <div class="card-hover bg-white rounded-2xl border border-fog overflow-hidden">
+        <div class="h-32 bg-navy flex items-center justify-center">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" opacity="0.6"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
+        <div class="p-6">
+          <p class="text-sm font-semibold text-accent mb-1">Accounting Services</p>
+          <h3 class="font-semibold text-lg text-ink">Staff Accountant</h3>
+          <p class="mt-2 text-sm text-slate leading-relaxed">Handles bookkeeping, reconciliations, and financial reporting with precision and close attention to detail.</p>
+        </div>
+      </div>
+      <div class="card-hover bg-white rounded-2xl border border-fog overflow-hidden">
+        <div class="h-32 bg-navy flex items-center justify-center">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" opacity="0.6"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
+        <div class="p-6">
+          <p class="text-sm font-semibold text-accent mb-1">Tax Services</p>
+          <h3 class="font-semibold text-lg text-ink">Tax Preparer</h3>
+          <p class="mt-2 text-sm text-slate leading-relaxed">Prepares individual and business tax returns while identifying opportunities for meaningful tax savings.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-24 lg:py-28 bg-navy text-white text-center ledger-dark">
+  <div class="max-w-2xl mx-auto px-6">
+    <h2 class="text-3xl lg:text-4xl font-semibold tracking-tight">Ready to work with us?</h2>
+    <p class="mt-4 text-lg text-white/70">Experience the difference of a team that combines professional expertise with personal attention.</p>
+    <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a href="./index.html#contact" class="inline-flex items-center gap-2 rounded-full bg-white text-navy font-semibold text-[15px] px-8 py-4">Schedule Consultation</a>
+      <a href="tel:6159138559" class="inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/20 text-white font-semibold text-[15px] px-8 py-4">(615) 913-8559</a>
+    </div>
+  </div>
+</section>
+
+<footer class="py-12 border-t border-fog">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+    <div class="flex items-center gap-2.5">
+      <span class="h-8 w-8 rounded-md bg-navy flex items-center justify-center"><span class="text-white text-sm font-bold num">PS</span></span>
+      <span class="font-semibold text-[15px] text-ink">Pratik Shah, CPA</span>
+    </div>
+    <div class="flex flex-wrap gap-x-8 gap-y-3 text-sm text-slate">
+      <a href="./services.html" class="hover:text-ink">Services</a>
+      <a href="./index.html#industries" class="hover:text-ink">Industries</a>
+      <a href="./about.html" class="hover:text-ink">About</a>
+      <a href="tel:6159138559" class="hover:text-ink">(615) 913-8559</a>
+    </div>
+    <p class="text-sm text-slate">© 2026 Pratik Shah, CPA. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuBtn.addEventListener('click', () => {
+    const open = mobileMenu.classList.toggle('hidden') === false;
+    menuBtn.setAttribute('aria-expanded', open);
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
