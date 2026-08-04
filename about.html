@@ -5,9 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About — Pratik Shah, CPA</title>
 <meta name="description" content="Two decades of accounting expertise, led by Pratik Shah, CPA. Meet the firm and the team behind it, based in Murfreesboro, Tennessee.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
   tailwind.config = {
@@ -17,14 +14,14 @@
         ink: '#0F172A', mist: '#F4F6F9', fog: '#E7EBF2', slate: '#5B6577',
         accent: { DEFAULT: '#2E5EFF', 600: '#2650DE', 100: '#E9EEFF' },
       },
-      fontFamily: { sans: ['Inter','sans-serif'], mono: ['IBM Plex Mono','monospace'] },
+      fontFamily: { sans: ['Arial','Helvetica','sans-serif'], mono: ['Arial','Helvetica','sans-serif'] },
     }}
   }
 </script>
 <style>
   html { scroll-behavior: smooth; }
-  body { font-family: 'Inter', sans-serif; color:#0F172A; background:#FFFFFF; }
-  .num { font-family:'IBM Plex Mono', monospace; }
+  body { font-family: Arial, Helvetica, sans-serif; color:#0F172A; background:#FFFFFF; }
+  .num { font-family: Arial, Helvetica, sans-serif; }
   .ledger { background-image: repeating-linear-gradient(to bottom, transparent, transparent 39px, rgba(11,27,58,0.06) 40px); }
   .ledger-dark { background-image: repeating-linear-gradient(to bottom, transparent, transparent 39px, rgba(255,255,255,0.055) 40px); }
   .card-hover { transition: transform .3s ease, box-shadow .3s ease; }
@@ -48,12 +45,12 @@
       <span class="font-semibold text-[15px] tracking-tight text-ink">Pratik Shah, <span class="text-slate font-medium">CPA</span></span>
     </a>
     <nav class="hidden lg:flex items-center gap-9 text-[14.5px] font-medium text-slate">
+      <a href="./about.html" class="text-ink underline-grow">About</a>
       <a href="./services.html" class="hover:text-ink underline-grow">Services</a>
       <a href="./index.html#industries" class="hover:text-ink underline-grow">Industries</a>
-      <a href="./about.html" class="text-ink underline-grow">About</a>
       <a href="./index.html#faq" class="hover:text-ink underline-grow">Resources</a>
-      <a href="./index.html#contact" class="hover:text-ink underline-grow">Contact</a>
       <a href="https://pratikshahcpa.securefilepro.com/portal/#/login" target="_blank" rel="noopener" class="hover:text-ink underline-grow">Client Portal</a>
+      <a href="./index.html#contact" class="hover:text-ink underline-grow">Contact</a>
     </nav>
     <div class="flex items-center gap-3">
       <a href="./index.html#contact" class="hidden sm:inline-flex items-center rounded-full bg-navy hover:bg-navy-700 text-white text-[14px] font-semibold px-5 py-2.5 transition-colors">Schedule Consultation</a>
@@ -63,12 +60,12 @@
     </div>
   </div>
   <div id="mobileMenu" class="hidden lg:hidden bg-white border-t border-fog px-6 py-5 space-y-4 text-[15px] font-medium text-ink">
+    <a href="./about.html" class="block">About</a>
     <a href="./services.html" class="block">Services</a>
     <a href="./index.html#industries" class="block">Industries</a>
-    <a href="./about.html" class="block">About</a>
     <a href="./index.html#faq" class="block">Resources</a>
-    <a href="./index.html#contact" class="block">Contact</a>
     <a href="https://pratikshahcpa.securefilepro.com/portal/#/login" target="_blank" rel="noopener" class="block">Client Portal</a>
+    <a href="./index.html#contact" class="block">Contact</a>
     <a href="./index.html#contact" class="block rounded-full bg-navy text-white text-center font-semibold px-5 py-2.5">Schedule Consultation</a>
   </div>
 </header>
@@ -147,7 +144,6 @@
       </p>
       <div class="mt-8 flex flex-wrap gap-8">
         <div><p class="num text-2xl font-semibold text-ink">2</p><p class="text-sm text-slate">Decades in practice</p></div>
-        <div><p class="num text-2xl font-semibold text-ink">CPA</p><p class="text-sm text-slate">Licensed &amp; MBA</p></div>
         <div><p class="num text-2xl font-semibold text-ink">1:1</p><p class="text-sm text-slate">Direct access, always</p></div>
       </div>
       <a href="mailto:contact@cpa-shah.com" class="mt-8 inline-flex items-center gap-2 text-accent font-semibold text-sm underline-grow">
